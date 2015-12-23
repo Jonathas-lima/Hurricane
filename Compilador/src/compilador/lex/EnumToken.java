@@ -16,36 +16,45 @@ public enum EnumToken {
 	MINUS("\\-"),
 	TIMES("\\*"),
 	DIVIDE("/"),
+        REST("\\%"),
+        CONCATENATE("~"),
 	
 	// Comparision operators
 	
 	EQUAL("=="),
-	NOT_EQUAL("<>"),
+	NOT_EQUAL("!="),
 	LESS_THAN("<"),
 	MORE_THAN(">"),
 	LESS_OR_EQUAL("<="),
 	MORE_OR_EQUAL(">="),
 	
 	// types
-	INT("int"),
-	BOOLEAN("boolean"),
+	INTG("intg"),
+	BOOLEAN("bl"),
+        REAL("rl"),
+        CARACTER("crt"),
+        STRING("txt"),
+        VECTOR("vector"),
 	
 	// Constants
 	
-	INT_CONSTANT("\\-?[0-9]*"),
+	INT_CONSTANT("^(\\+|-)?\\d+$"),
+        FLOAT_CONSTANT( "^(\\+|-)([0-9]*|\\d*\\.\\d{1}?\\d*)$" ),
 	TRUE("true"),
 	FALSE("false"),
 	
 	// keywords
-	
-	PRINTF("printf"),
-	IF("if"),
-	ELSE("else"),
-	WHILE("while"),
-	CONTINUE("continue"),
-	BREAK("break"),
-	RETURN("return"),
-	
+	MAIN( "main" ),
+        OUT( "out" ),
+        IN( "in" ),
+        IF( "if" ),
+        ELSE( "else" ),
+        WHILE( "while" ),
+        CONST( "const" ),
+        RETURN( "return" ),
+        FUNCTION( "function" ),
+        VOID( "void" ),
+        FOR( "for" ),
 	// Special symbols
 	
 	OPEN_CURLY("\\{"),
@@ -53,7 +62,6 @@ public enum EnumToken {
 	OPEN_PAREN("\\("),
 	CLOSE_PAREN("\\)"),
 	ASSIGNMENT("="),
-	COMA(","),
 	SEMICOLON(";"),
 	
 	// Identifiers
