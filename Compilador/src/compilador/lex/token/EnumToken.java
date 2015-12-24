@@ -3,7 +3,7 @@
  * na linguagem. É utilizada expressoes regulares
  * para representacao.
  */
-package compilador.lex;
+package compilador.lex.token;
 
 /**
  *
@@ -11,7 +11,7 @@ package compilador.lex;
  */
 public enum EnumToken {
     
-    	// Arithmetic Operators
+    	// Operadores Artimeticos
 	PLUS("\\+"),
 	MINUS("\\-"),
 	TIMES("\\*"),
@@ -19,7 +19,7 @@ public enum EnumToken {
         REST("\\%"),
         CONCATENATE("~"),
 	
-	// Comparision operators
+	// Operadores de comparacao
 	
 	EQUAL("=="),
 	NOT_EQUAL("!="),
@@ -28,7 +28,7 @@ public enum EnumToken {
 	LESS_OR_EQUAL("<="),
 	MORE_OR_EQUAL(">="),
 	
-	// types
+	// tipos
 	INTG("intg"),
 	BOOLEAN("bl"),
         REAL("rl"),
@@ -36,14 +36,14 @@ public enum EnumToken {
         STRING("txt"),
         VECTOR("vector"),
 	
-	// Constants
+	// Constantes
 	
 	INT_CONSTANT("^(\\+|-)?\\d+$"),
         FLOAT_CONSTANT( "^(\\+|-)([0-9]*|\\d*\\.\\d{1}?\\d*)$" ),
 	TRUE("true"),
 	FALSE("false"),
 	
-	// keywords
+	// Palavras reservadas
 	MAIN( "main" ),
         OUT( "out" ),
         IN( "in" ),
@@ -55,7 +55,8 @@ public enum EnumToken {
         FUNCTION( "function" ),
         VOID( "void" ),
         FOR( "for" ),
-	// Special symbols
+	
+        // Simbolos especiais
 	
 	OPEN_CURLY("\\{"),
 	CLOSE_CURLY("\\}"),
@@ -63,10 +64,13 @@ public enum EnumToken {
 	CLOSE_PAREN("\\)"),
 	ASSIGNMENT("="),
 	SEMICOLON(";"),
-	
+        CLOSE_COMMENT("\\*\\/"),
+        OPEN_COMMENT("\\/\\*"),
+        LINE_COMMENT("\\/\\/"),
+	        
 	// Identifiers
 	
-	IDENTIFIER("[a-zA-Z][a-zA-Z]*"),
+	IDENTIFIER("[a-zA-Z][a-zA-Z][a-zA-Z]+"),
 	
 	// Unknow token
 	UNKNOW("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");

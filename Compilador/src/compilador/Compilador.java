@@ -5,6 +5,10 @@
  */
 package compilador;
 
+import compilador.lex.token.EnumToken;
+import compilador.lex.token.Token;
+import compilador.lex.token.TokenList;
+
 /**
  *
  * @author JonathasAlberto
@@ -15,7 +19,16 @@ public class Compilador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
+        String aux = " ";
+        
+        TokenList listToken = new TokenList();
+        
+        Token token = listToken.matchToken(aux);
+        
+        System.out.println(token.getTokenType().toString());
+        
     }
     
 }
