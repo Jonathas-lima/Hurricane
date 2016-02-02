@@ -5,9 +5,10 @@
  */
 package compilador;
 
-import compilador.lex.token.EnumToken;
 import compilador.lex.token.Token;
 import compilador.lex.token.TokenList;
+import file.LerArquivo;
+import java.io.BufferedReader;
 
 /**
  *
@@ -21,14 +22,15 @@ public class Compilador {
     public static void main(String[] args) {
         
         
-        String aux = " ";
+        String path = "src/texto.txt";
         
-        TokenList listToken = new TokenList();
+        LerArquivo la = new LerArquivo();
         
-        Token token = listToken.matchToken(aux);
+        BufferedReader BF = la.ler(path);
         
-        System.out.println(token.getTokenType().toString());
+        la.verificaTonken(BF);
         
+       
     }
     
 }
