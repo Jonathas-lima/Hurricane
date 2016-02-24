@@ -12,7 +12,7 @@ package compilador.lex.token;
 public class TokenList {
     
     
-    private final Token [] tokenList; //manetera uma lista de todos os tokens.
+    private final Token [] tokenList; //mantera uma lista de todos os tokens.
     
     public TokenList(){
         

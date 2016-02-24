@@ -5,8 +5,6 @@
  */
 package file;
 
-import compilador.lex.token.Token;
-import compilador.lex.token.TokenList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +15,14 @@ import java.io.IOException;
  */
 public class LerArquivo {
     
-    public BufferedReader ler (String path){
+    private final String path;
+    
+    public LerArquivo(String path){
+        this.path = path;
+    }
+    
+    
+    public BufferedReader ler (){
         
         BufferedReader lerFile = null;
         
@@ -31,40 +36,6 @@ public class LerArquivo {
             System.out.println(e.getMessage());
         }  
         return lerFile;
-    }
-    
-    public void  verificaTonken(BufferedReader lerFile){
-        
-         TokenList listToken = new TokenList();
-        
-        try{
-            String aux = lerFile.readLine();
-        
-            while(aux!=null){
-            
-               String aux2 ="";
-        
-                for(int i=0 ; i< aux.length(); i++){
-
-                    if(aux.charAt(i)!= 32){
-
-                        //aux2+=String.valueOf(aux.charAt(i));
-                        StringBuilder txt = new StringBuilder(aux);
-
-                        System.out.println(aux2);
-
-                    } else{
-                     
-                        aux2="";
-                    }
-                }       
-                aux = lerFile.readLine();
-            }   
-        }catch (IOException e){
-            System.out.println("ERRO ao ler linha do arquivo");
-            
-        }
-        
     }
     
 }

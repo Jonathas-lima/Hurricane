@@ -157,7 +157,7 @@ public class Token{
 	@Override
 	public String toString() {
 	
-		return "Lexema: " + this.lexeme;
+		return "Token Type: " + this.tokenType.toString();
 		
 	}
 }
