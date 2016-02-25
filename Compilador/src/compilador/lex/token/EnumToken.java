@@ -16,7 +16,6 @@ public enum EnumToken {
 	MINUS("\\-"),
 	TIMES("\\*"),
 	DIVIDE("/"),
-        REST("\\%"),
         CONCATENATE("~"),
 	
 	// Operadores de comparacao
@@ -27,6 +26,11 @@ public enum EnumToken {
 	MORE_THAN(">"),
 	LESS_OR_EQUAL("<="),
 	MORE_OR_EQUAL(">="),
+	
+	//Operadores logicos
+	AND("\^"),
+	NOT("\!"),
+	OR("\|"),	
 	
 	// tipos
 	INTG("int"),
