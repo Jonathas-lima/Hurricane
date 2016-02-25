@@ -29,11 +29,11 @@ public enum EnumToken {
 	MORE_OR_EQUAL(">="),
 	
 	// tipos
-	INTG("intg"),
-	BOOLEAN("bl"),
-        REAL("rl"),
-        CARACTER("crt"),
-        STRING("txt"),
+	INTG("int"),
+	BOOLEAN("bool"),
+        REAL("real"),
+        CARACTER("char"),
+        STRING("text"),
         VECTOR("vector"),
 	
 	// Constantes
@@ -63,16 +63,13 @@ public enum EnumToken {
 	OPEN_PAREN("\\("),
 	CLOSE_PAREN("\\)"),
 	ASSIGNMENT("="),
-	SEMICOLON(";"),
-        CLOSE_COMMENT("\\*\\/"),
-        OPEN_COMMENT("\\/\\*"),
-        LINE_COMMENT("\\/\\/"),
+        LINE_COMMENT("#"),
 	        
-	// Identifiers
+	// Identificadores
 	
-	IDENTIFIER("[a-zA-Z][a-zA-Z][a-zA-Z]+"),
+	IDENTIFIER("[a-zA-Z]+"),
 	
-	// Unknow token
+	//tokens desconhecidos pela linguagem
 	UNKNOW("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
 	
 	private String pattern;
