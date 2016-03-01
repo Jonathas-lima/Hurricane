@@ -29,17 +29,17 @@ public enum EnumToken {
 	MORE_OR_EQUAL(">="),
 	
 	// tipos
-	INTG("intg"),
-	BOOLEAN("bl"),
-        REAL("rl"),
-        CARACTER("crt"),
-        STRING("txt"),
+	INT("int"),
+	BOOLEAN("bool"),
+        REAL("real"),
+        CARACTER("char"),
+        STRING("text"),
         VECTOR("vector"),
 	
 	// Constantes
 	
 	INT_CONSTANT("^(\\+|-)?\\d+$"),
-        FLOAT_CONSTANT( "^(\\+|-)([0-9]*|\\d*\\.\\d{1}?\\d*)$" ),
+        FLOAT_CONSTANT( "(([1-9][0-9]*\\.?[0-9]*)|(\\.[0-9]+))([Ee][+-]?[0-9]+)?" ),
 	TRUE("true"),
 	FALSE("false"),
 	
@@ -70,10 +70,10 @@ public enum EnumToken {
 	        
 	// Identifiers
 	
-	IDENTIFIER("[a-zA-Z][a-zA-Z][a-zA-Z]+"),
+	IDENTIFIER("[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z]+");
 	
 	// Unknow token
-	UNKNOW("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
+	//UNKNOW("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
 	
 	private String pattern;
 	

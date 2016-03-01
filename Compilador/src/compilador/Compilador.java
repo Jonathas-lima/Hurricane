@@ -39,26 +39,35 @@ public class Compilador {
         while((linha = BF.readLine())!=null){
                 
             str = new StringBuilder();
-            
+                    
+            linha = linha + "@";
+            System.out.println("linha: "+ linha);
             for(int i = 0; i<linha.length();i++){
                                            
                 char caracter = linha.charAt(i);
-                
+                //System.out.println(caracter);
                 //35 = #(tabela ascii)
                 if(caracter == 35){
                     break;
                 }
+                if (caracter == 32 || caracter == 64){
                 
-                tk = tklist.matchToken(Character.toString(caracter));
-                if(tk ==null){                
-                    str.append(caracter);
+                    tk = tklist.matchToken(str.toString());
+                
+                    str.delete(0, str.length());
+                    
+                    if (tk != null){
+                        System.out.println(tk.toString());
+                    }else{
+                        System.out.println("tk null");
+                    }
                 }else{
-                    System.out.println(tk.toString());
+                    
+                     str.append(caracter);
                 }
             }
-            //System.out.println("str "+numLinha +": "+str.toString());
             numLinha++;
-        }             
+        }    
     }     
 }
  

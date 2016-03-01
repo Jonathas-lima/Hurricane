@@ -1,1 +1,9 @@
-main(){}
+main ( ) {
+
+int alfa = 121231231
+real beta = 1.2
+
+function teste ( int auxi ) {
+    return auxi
+}
+}
