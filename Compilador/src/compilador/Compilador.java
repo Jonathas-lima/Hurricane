@@ -5,6 +5,7 @@
  */
 package compilador;
 
+import compilador.lex.token.AnalisadorLexico;
 import compilador.lex.token.Token;
 import compilador.lex.token.TokenList;
 import file.LerArquivo;
@@ -29,45 +30,9 @@ public class Compilador {
         
         BufferedReader BF = la.ler();
         
-        String linha;
-        int numLinha=1;
-        StringBuilder str = null;
- 
-        TokenList tklist = new TokenList();
-        Token tk = null;
+        AnalisadorLexico  an= new AnalisadorLexico(BF);
         
-        while((linha = BF.readLine())!=null){
-                
-            str = new StringBuilder();
-                    
-            linha = linha + "@";
-            System.out.println("linha: "+ linha);
-            for(int i = 0; i<linha.length();i++){
-                                           
-                char caracter = linha.charAt(i);
-                //System.out.println(caracter);
-                //35 = #(tabela ascii)
-                if(caracter == 35){
-                    break;
-                }
-                if (caracter == 32 || caracter == 64){
-                
-                    tk = tklist.matchToken(str.toString());
-                
-                    str.delete(0, str.length());
-                    
-                    if (tk != null){
-                        System.out.println(tk.toString());
-                    }else{
-                        System.out.println("tk null");
-                    }
-                }else{
-                    
-                     str.append(caracter);
-                }
-            }
-            numLinha++;
-        }    
+        an.processaArquivo();
     }     
 }
  

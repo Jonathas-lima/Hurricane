@@ -8,10 +8,10 @@ package compilador.lex.token;
  */
 public class Token{
 	
-	private String lexeme;
-	private EnumToken tokenType;
-	private int lineNumber;
-        private int columnNumber;
+	private String valorToken;
+	private EnumToken categoriaToken;
+	private int numLinha;
+        private int numColuna;
 	
 	/**
 	 * Construtor do token
@@ -20,9 +20,13 @@ public class Token{
 	 */
 	public Token(EnumToken tokenType) {
 	
-		this.tokenType = tokenType;
+		this.categoriaToken = tokenType;
 		
 	}
+        
+        public Token(){
+        
+        }
 	
 	/**
 	 * Retorna o lexema
@@ -32,7 +36,7 @@ public class Token{
 	 */
 	public String getLexeme() {
 	
-		return this.lexeme;
+		return this.valorToken;
 		
 	}
 	
@@ -43,7 +47,7 @@ public class Token{
 	 */
 	public void setLexeme(String lexeme) {
 	
-		this.lexeme = lexeme;
+		this.valorToken = lexeme;
 		
 	}
 	
@@ -54,7 +58,7 @@ public class Token{
 	 */
 	public EnumToken getTokenType() {
 	
-		return this.tokenType;
+		return this.categoriaToken;
 		
 	}
 	
@@ -75,8 +79,8 @@ public class Token{
 		
 		Token token = (Token) obj;
 		
-		if(this.lexeme.equals(token.getLexeme()) &&
-		        this.tokenType.equals(token.getTokenType())){
+		if(this.valorToken.equals(token.getLexeme()) &&
+		        this.categoriaToken.equals(token.getTokenType())){
 			
 			return true;
 			
@@ -94,7 +98,7 @@ public class Token{
 	 */
 	public int getLineNumber() {
 	
-		return this.lineNumber;
+		return this.numLinha;
 		
 	}
 	
@@ -113,7 +117,7 @@ public class Token{
 			
 		}
 		
-		this.lineNumber = lineNumber;
+		this.numLinha = lineNumber;
 		
 	}
         
@@ -124,7 +128,7 @@ public class Token{
 	 */
 	public int getColumnNumber() {
 	
-		return this.columnNumber;
+		return this.numColuna;
 		
 	}
 	
@@ -143,21 +147,21 @@ public class Token{
 			
 		}
 		
-		this.columnNumber = columnNumber;
+		this.numColuna = columnNumber;
 		
 	}
 	
 	@Override
 	public int hashCode() {
 	
-		return this.lexeme.length() * this.tokenType.hashCode() * this.lineNumber;
+		return this.valorToken.length() * this.categoriaToken.hashCode() * this.numLinha;
 		
 	}
 	
 	@Override
 	public String toString() {
 	
-		return "Token Type: " + this.tokenType.toString();
+		return "Token Type: " + this.categoriaToken.toString();
 		
 	}
 }

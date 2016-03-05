@@ -12,13 +12,17 @@ package compilador.lex.token;
 public class TokenList {
     
     
-    private final Token [] tokenList; //mantera uma lista de todos os tokens.
+    //mantera uma lista de todos os tokens da linguagem.
+    private final Token [] tokenList; 
     
     public TokenList(){
-        
+        //recebe todos os valores definidos na enumeracao
         EnumToken [] enumTokenList = EnumToken.values();
+        
+        //instancia o vetor lista com o tamanho de elementos da enumeracao
         tokenList = new Token[enumTokenList.length];
         
+        //itera a lista e cria um token inserindo-o na lista de tokens
         for(int i=0; i<enumTokenList.length ; i++){
             
             tokenList[i] = new Token(enumTokenList[i]);
@@ -42,20 +46,4 @@ public class TokenList {
 
         return token;
     }
-    
-    @Override
-	public String toString() {
-		
-		StringBuilder result = new StringBuilder();
-		
-        for (Token tokenList1 : this.tokenList) {
-            result.append("\n\n" + tokenList1.toString());
-        }
-		
-		return result.toString();
-		
-	}
-    
-    
-    
 }
