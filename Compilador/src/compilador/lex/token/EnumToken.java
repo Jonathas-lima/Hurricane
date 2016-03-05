@@ -23,11 +23,11 @@ public enum EnumToken {
 	LESS_OR_EQUAL("<="),
 	MORE_OR_EQUAL(">="),
 	//Operadores logicos
-	AND("\^"),
-	NOT("\!"),
-	OR("\|"),	
+	AND("\\^"),
+	NOT("\\!"),
+	OR("\\|"),	
 	// tipos
-	INTG("int"),
+	INT("int"),
 	BOOLEAN("bool"),
         REAL("real"),
         CARACTER("char"),
