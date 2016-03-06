@@ -25,9 +25,14 @@ public class AnalisadorLexico {
         this.bf = bf;
         listaLexemas = new ArrayList<>();
         
+        try{
+            this.processaArquivo();
+        }catch( IOException e){
+            System.out.println("ERRO ao processar arquivo"+ e.getMessage());
+        }
     }
     
-    public void processaArquivo() throws IOException{
+    private void processaArquivo() throws IOException{
        
         //para ler linha por linha do arquivo
         String linha; 
@@ -56,14 +61,16 @@ public class AnalisadorLexico {
                 }
                 //32 = espaco em branco || 64 = @ (terminador de linha) 
                 if (caracter == 32 || caracter == 64 && !linha.equals("@")){
-                                    
-                    //instancia o lexema encontrado, com valor, linha e coluna
-                    lexema = new Lexema(str.toString(), numLinha, numColuna - str.length());
                     
-                    //adiciona a lista o lexema para posterior chamada de nexToken()
-                    listaLexemas.add(lexema);
+                    if(str.length()!=0){    //para nao colocar espacos em braco
+                        
+                        //instancia o lexema encontrado, com valor, linha e coluna
+                        lexema = new Lexema(str.toString(), numLinha, numColuna - str.length());
+                        //adiciona a lista o lexema para posterior chamada de nexToken()
+                        listaLexemas.add(lexema);
+                        str.delete(0, str.length());   //limpa a str
+                    }
                     
-                    str.delete(0, str.length());   //limpa a str
                 }else{
                     //para nao adicionar o '@' a str
                     if(caracter != 64){
@@ -76,15 +83,14 @@ public class AnalisadorLexico {
             numColuna=1;
         } 
         bf.close();
-        
-        System.out.println(listaLexemas.toString());
+        //System.out.println(listaLexemas.toString());
     } 
     
-    public Token nexToken(){
+    public Token nexToken() {
         
         Token tk = null;
         Lexema lx = null;
-        
+ 
         if(listaLexemas.isEmpty()){
             return null;
         }else{
@@ -97,10 +103,10 @@ public class AnalisadorLexico {
             tk.setLineColumn(lx.getColuna());
             tk.setLineNumber(lx.getLinha());
             
-            /*
-                SALVAR NA TABELA DE SÍMBOLOS 
-            
-            */
+            if(tk.getTokenType().toString().equals("IDENTIFICADOR")){
+                
+                
+            }
             
             return tk;
         } 

@@ -7,7 +7,6 @@ package compilador;
 
 import compilador.lex.token.AnalisadorLexico;
 import compilador.lex.token.Token;
-import compilador.lex.token.TokenList;
 import file.LerArquivo;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,7 +31,14 @@ public class Compilador {
         
         AnalisadorLexico  an= new AnalisadorLexico(BF);
         
-        an.processaArquivo();
+       
+        Token tk = an.nexToken();
+        
+        while(tk !=null){
+           
+            System.out.println(tk.toString());
+            tk = an.nexToken();
+        } 
     }     
 }
  

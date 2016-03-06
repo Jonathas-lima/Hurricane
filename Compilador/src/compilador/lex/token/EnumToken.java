@@ -10,22 +10,22 @@ package compilador.lex.token;
  */
 public enum EnumToken {
       	// Operadores Artimeticos
-	PLUS("\\+"),
-	MINUS("\\-"),
-	TIMES("\\*"),
-	DIVIDE("/"),
-        CONCATENATE("~"),
+	OP_ADICAO("\\+"),
+	OP_SUBITRACAO("\\-"),
+	OP_MULTIPLICACAO("\\*"),
+	OP_DIVISAO("/"),
+        OP_CONCATENACAO("~"),
 	// Operadores de comparacao
-	EQUAL("=="),
-	NOT_EQUAL("!="),
-	LESS_THAN("<"),
-	MORE_THAN(">"),
-	LESS_OR_EQUAL("<="),
-	MORE_OR_EQUAL(">="),
+        OP_IGUAL("=="),
+	OP_DIFERENTE("!="),
+	OP_MENOR_QUE("<"),
+	OP_MAIOR_QUE(">"),
+	OP_MAIOR_OU_IGUAL("<="),
+	OP_MENOR_OU_IGUAL(">="),
 	//Operadores logicos
-	AND("\\^"),
-	NOT("\\!"),
-	OR("\\|"),	
+	OP_AND("\\^"),
+        OP_NOT("\\!"),
+	OP_OR("\\|"),	
 	// tipos
 	INT("int"),
 	BOOLEAN("bool"),
@@ -34,8 +34,8 @@ public enum EnumToken {
         STRING("text"),
         VECTOR("vector"),
 	// Constantes
-	INT_CONSTANT("^(\\+|-)?\\d+$"),
-        FLOAT_CONSTANT( "(([1-9][0-9]*\\.?[0-9]*)|(\\.[0-9]+))([Ee][+-]?[0-9]+)?" ),
+	INT_CONSTANTE("^(\\+|-)?\\d+$"),
+        FLOAT_CONSTANTE( "(([1-9][0-9]*\\.?[0-9]*)|(\\.[0-9]+))([Ee][+-]?[0-9]+)?" ),
 	TRUE("true"),
 	FALSE("false"),
 	// Palavras reservadas
@@ -51,16 +51,18 @@ public enum EnumToken {
         VOID( "void" ),
         FOR( "for" ),
         // Simbolos especiais
-	OPEN_CURLY("\\{"),
-	CLOSE_CURLY("\\}"),
-	OPEN_PAREN("\\("),
-	CLOSE_PAREN("\\)"),
-	ASSIGNMENT("="),
-        LINE_COMMENT("#"),
+	ABRE_CHAVE("\\{"),
+	FECHA_CHAVE("\\}"),
+        ABRE_COLCHETE("\\["),
+	FECHA_COLCHETE("\\]"),
+	ABRE_PARENTESE("\\("),
+	FECHA_PARENTESE("\\)"),
+	ATRIBUICAO("="),
+        COMENTARIO_LINHA("#"),
 	// Identificadores
-	IDENTIFIER("[a-zA-Z]+"),
+	IDENTIFICADOR("[a-zA-Z]+"),
 	//tokens desconhecidos pela linguagem
-	UNKNOW("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
+	DESCONHECIDO("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
 	private String pattern;
 	
 	private EnumToken(String pattern) {

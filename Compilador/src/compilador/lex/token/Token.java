@@ -161,7 +161,9 @@ public class Token{
 	@Override
 	public String toString() {
 	
-		return "Token Type: " + this.categoriaToken.toString();
-		
+		return "Classe do Token: " + this.categoriaToken.toString()+"\n"+
+                        "Linha: "+ this.numLinha+ "\n"+
+                        "Coluna: "+ this.numColuna +"\n"+
+                        "################";
 	}
 }
