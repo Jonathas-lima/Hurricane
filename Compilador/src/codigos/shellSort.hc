@@ -9,21 +9,21 @@ main ( ) {
 
     int tamanho = 5 # tamanho do vetor de números
     int meio  =  tamanho / 2 
-    int varx
-    int vary
-    int vari
+    int var_x
+    int var_y
+    int var_i
 
     while ( meio > 0 ) { 
 
-        for ( vari = meio ; vari < tamanho ; vari = vari + vari ) {
+        for ( var_i = meio ; var_i < tamanho ; var_i = var_i + var_i ) {
 
-                varx = numeros [ i ]
-                vary = vari
-                while ( vary >= meio ^ numeros [ vary - meio ] > varx ) {
-                        numeros [ vary ] = numeros [ y - meio ]
-                        vary = vary - meio
+                var_x = numeros [ var_i ]
+                var_y = var_i
+                while ( var_y >= meio ^ numeros [ var_y - meio ] > var_x ) {
+                        numeros [ var_y ] = numeros [ var_y - meio ]
+                        var_y = var_y - meio
                 }
-                numeros [ y ] = varx
+                numeros [ var_y ] = var_x
         }
         meio = meio / 2
     }

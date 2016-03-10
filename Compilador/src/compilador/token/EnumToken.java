@@ -62,7 +62,7 @@ public enum EnumToken {
         COMENTARIO_LINHA("#"),
         SEPARADOR_VIRGULA(";"),
 	// Identificadores
-	IDENTIFICADOR("[a-zA-Z]+"),
+	IDENTIFICADOR("[a-zA-Z][a-zA-Z][a-zA-Z]\\_*[a-zA-Z]+"),
 	//tokens desconhecidos pela linguagem
 	DESCONHECIDO("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
 	

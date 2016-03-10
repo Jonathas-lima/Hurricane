@@ -117,7 +117,7 @@ public class AnalisadorLexico {
                 System.out.println("ERRO DE CODIFICAÇÃO Linha: "+lx.getLinha()
                         +" Coluna: "+ lx.getColuna());
                 
-                System.out.println("INSERIR ESPAÇO EM BRANCO ENTRE: "+lx.getValor());
+                System.out.println("VERIFICAR: "+lx.getValor());
                 
                 return null;
             }
