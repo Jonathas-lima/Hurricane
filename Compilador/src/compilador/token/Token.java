@@ -85,8 +85,9 @@ public class Token{
 	public String toString() {
 	
 		return "Classe do Token: " + this.categoriaToken.toString()+"\n"+
+                        "Valor: "+this.lex.getValor()+"\n"+
                         "Linha: "+ this.lex.getLinha()+ "\n"+
                         "Coluna: "+ this.lex.getColuna() +"\n"+
-                        "#########################";
+                        "##################################";
 	}
 }

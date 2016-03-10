@@ -58,6 +58,7 @@ public class AnalisadorLexico {
                 if(caracter == 35){
                     break;
                 }
+                
                 //32 = espaco em branco || 64 = @ (terminador de linha) 
                 if (caracter == 32 || caracter == 64 && !linha.equals("@")){
                     
@@ -99,17 +100,27 @@ public class AnalisadorLexico {
             /*verifica se o lexema corresponde a alguma categoria de token e
              *retorna o token do lexema correspondente.
             */
-            tk = new TokenList().matchToken(lx.getValor());
-            
-            //atribui ao token o lexema
-            tk.setLexeme(lx);
-            
-            //salvar os identificadores na tabela de simbolo
-            if(tk.getTokenType().toString().equals("IDENTIFICADOR")){
+            try{
+                tk = new TokenList().matchToken(lx.getValor());
+
+                //atribui ao token o lexema
+                tk.setLexeme(lx);
+
+                //salvar os identificadores na tabela de simbolo
+                if(tk.getTokenType().toString().equals("IDENTIFICADOR")){
+
+                    Compilador.tabelaSimbolos.addIdentificagor(tk.getLexeme(), tk);
+                }
+                return tk;
                 
-                Compilador.tabelaSimbolos.addIdentificagor(tk.getLexeme(), tk);
+            }catch(NullPointerException e){
+                System.out.println("ERRO DE CODIFICAÇÃO Linha: "+lx.getLinha()
+                        +" Coluna: "+ lx.getColuna());
+                
+                System.out.println("INSERIR ESPAÇO EM BRANCO ENTRE: "+lx.getValor());
+                
+                return null;
             }
-            return tk;
         } 
     }
 }

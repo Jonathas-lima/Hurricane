@@ -22,7 +22,7 @@ public class Compilador {
     public static void main(String[] args) throws IOException {
         
         //para abrir o arquivo a ser lido
-        String path = "src/codigos/texto.hc";
+        String path = "src/codigos/shellSort.hc";
         LerArquivo la = new LerArquivo(path);
         BufferedReader BF = la.ler();
         

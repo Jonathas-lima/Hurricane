@@ -36,6 +36,7 @@ public enum EnumToken {
 	// Constantes
 	INT_CONSTANTE("^(\\+|-)?\\d+$"),
         FLOAT_CONSTANTE( "(([1-9][0-9]*\\.?[0-9]*)|(\\.[0-9]+))([Ee][+-]?[0-9]+)?" ),
+        STRING_CONSTANTE("^\"([\\s\\S]*)\"$"),
 	TRUE("true"),
 	FALSE("false"),
 	// Palavras reservadas
@@ -59,6 +60,7 @@ public enum EnumToken {
 	FECHA_PARENTESE("\\)"),
 	ATRIBUICAO("="),
         COMENTARIO_LINHA("#"),
+        SEPARADOR_VIRGULA(";"),
 	// Identificadores
 	IDENTIFICADOR("[a-zA-Z]+"),
 	//tokens desconhecidos pela linguagem
