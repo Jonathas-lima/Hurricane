@@ -5,9 +5,9 @@
  */
 package compilador;
 
-import compilador.lex.token.AnalisadorLexico;
-import compilador.lex.token.Token;
-import file.LerArquivo;
+import compilador.lex.AnalisadorLexico;
+import compilador.token.Token;
+import util.LerArquivo;
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -17,23 +17,20 @@ import java.io.IOException;
  */
 public class Compilador {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static TabelaSimbolos tabelaSimbolos = new TabelaSimbolos();
+    
     public static void main(String[] args) throws IOException {
         
-        
-        String path = "src/texto.txt";
-        
+        //para abrir o arquivo a ser lido
+        String path = "src/codigos/texto.hc";
         LerArquivo la = new LerArquivo(path);
-        
         BufferedReader BF = la.ler();
         
+        //instanciando o analisador lexico
         AnalisadorLexico  an= new AnalisadorLexico(BF);
         
-       
+        //chamada a nexToken até não haver mais tokens
         Token tk = an.nexToken();
-        
         while(tk !=null){
            
             System.out.println(tk.toString());

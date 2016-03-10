@@ -1,10 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package compilador.lex.token;
+package compilador.lex;
 
+import compilador.token.Lexema;
+import compilador.token.Token;
+import compilador.token.TokenList;
+import compilador.Compilador;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,7 +39,7 @@ public class AnalisadorLexico {
         int numLinha = 1;
         //conta a coluna lida, para add ao lexema o valor onde ele aparece
         int numColuna =1;
-        //
+        //para criar as strings a partir dos caracteres lidos
         StringBuilder str = new StringBuilder();
         
         //ler linha por linha
@@ -83,7 +82,6 @@ public class AnalisadorLexico {
             numColuna=1;
         } 
         bf.close();
-        //System.out.println(listaLexemas.toString());
     } 
     
     public Token nexToken() {
@@ -95,19 +93,22 @@ public class AnalisadorLexico {
             return null;
         }else{
             
+            //remore o primeiro elemento da lista de lexemas a cada chamada
             lx = listaLexemas.remove(0);
         
+            /*verifica se o lexema corresponde a alguma categoria de token e
+             *retorna o token do lexema correspondente.
+            */
             tk = new TokenList().matchToken(lx.getValor());
             
-            tk.setLexeme(lx.getValor());
-            tk.setLineColumn(lx.getColuna());
-            tk.setLineNumber(lx.getLinha());
+            //atribui ao token o lexema
+            tk.setLexeme(lx);
             
+            //salvar os identificadores na tabela de simbolo
             if(tk.getTokenType().toString().equals("IDENTIFICADOR")){
                 
-                
+                Compilador.tabelaSimbolos.addIdentificagor(tk.getLexeme(), tk);
             }
-            
             return tk;
         } 
     }

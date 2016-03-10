@@ -3,7 +3,7 @@
  * na linguagem. É utilizada expressoes regulares
  * para representacao.
  */
-package compilador.lex.token;
+package compilador.token;
 /**
  *
  * @author JonathasAlberto
@@ -63,7 +63,8 @@ public enum EnumToken {
 	IDENTIFICADOR("[a-zA-Z]+"),
 	//tokens desconhecidos pela linguagem
 	DESCONHECIDO("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
-	private String pattern;
+	
+        private final String pattern;
 	
 	private EnumToken(String pattern) {
 	

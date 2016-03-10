@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package compilador.lex.token;
+
+package compilador.token;
 
 /**
  *
  * @author jonathas
  */
+
+//classe representa um lexema encontrado no codigo fonte
 public class Lexema {
     
     private String valor;
-    private int linha;
-    private int coluna;
+    private final int linha;
+    private final int coluna;
 
     public Lexema(String valor, int linha, int coluna){
 
