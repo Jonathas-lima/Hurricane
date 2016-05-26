@@ -60,6 +60,17 @@ public class Token{
 		return this.categoriaToken;
 		
 	}
+        
+        /**
+	 * Retorna o tipo do token em string
+	 * 
+	 * @return Uma string que corresponde ao token
+	 */
+	public String tokenCateg() {
+	
+		return this.categoriaToken.toString();
+	}
+
 
 	/**
 	 *Retorna o numero da linha que o token aparece no codigo

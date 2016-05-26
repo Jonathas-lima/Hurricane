@@ -7,7 +7,7 @@ main ( ) {
     numeros [ 3 ] = 4
     numeros [ 4 ] = 2
 
-    int tamanho = 5 # tamanho do vetor de números
+    int tamanho = 5 #tamanho do vetor de números
     int meio  =  tamanho / 2 
     int var_x
     int var_y

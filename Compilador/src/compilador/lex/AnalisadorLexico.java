@@ -94,7 +94,7 @@ public class AnalisadorLexico {
             return null;
         }else{
             
-            //remore o primeiro elemento da lista de lexemas a cada chamada
+            //remove o primeiro elemento da lista de lexemas a cada chamada
             lx = listaLexemas.remove(0);
         
             /*verifica se o lexema corresponde a alguma categoria de token e

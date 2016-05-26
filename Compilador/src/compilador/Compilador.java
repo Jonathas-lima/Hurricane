@@ -6,6 +6,7 @@
 package compilador;
 
 import compilador.lex.AnalisadorLexico;
+import compilador.sint.Sintatico;
 import compilador.token.Token;
 import util.LerArquivo;
 import java.io.BufferedReader;
@@ -22,15 +23,20 @@ public class Compilador {
     public static void main(String[] args) throws IOException {
         
         //para abrir o arquivo a ser lido
-        String path = "src/codigos/olaMundo.hc";
+        String path = "src/codigos/shellSort.hc";
         LerArquivo la = new LerArquivo(path);
         BufferedReader BF = la.ler();
         
         //instanciando o analisador lexico
         AnalisadorLexico  an= new AnalisadorLexico(BF);
         
+        
+       /* Sintatico s = new Sintatico(an);
+        
+        s.inicio(); */
+        
         //chamada a nexToken até não haver mais tokens
-        Token tk = an.nexToken();
+       Token tk = an.nexToken();
         while(tk !=null){
            
             System.out.println(tk.toString());

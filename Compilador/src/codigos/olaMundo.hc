@@ -1,3 +1,5 @@
 main ( ) {
-    out ( "Olá_mundo" )
-} 
+    
+    function void testes ( ) { 
+}
+}

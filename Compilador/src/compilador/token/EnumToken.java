@@ -60,11 +60,12 @@ public enum EnumToken {
 	FECHA_PARENTESE("\\)"),
 	ATRIBUICAO("="),
         COMENTARIO_LINHA("#"),
-        SEPARADOR_VIRGULA(";"),
+        SEPARADOR_VIRGULA(","),
+        SEPARADOR_PONTO_VIRGULA(";"),
 	// Identificadores
 	IDENTIFICADOR("[a-zA-Z][a-zA-Z][a-zA-Z]\\_*[a-zA-Z]+"),
 	//tokens desconhecidos pela linguagem
-	DESCONHECIDO("[^\\Qa-zA-Z0-9+-*/!~<>;.,=?[](){}|&\\E]");
+	DESCONHECIDO("[^\\Qa-zA-Z0-9+-*/!~<>;.=?[](){}|&\\E]");
 	
         private final String pattern;
 	
